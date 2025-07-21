@@ -17,10 +17,7 @@ class Settings(BaseSettings):
     # Security
     BCRYPT_ROUNDS: int = 12
     CORS_ORIGINS: List[str] = ["*"]
-    
-    # Redis (optional, for token blacklisting)
-    REDIS_URL: Optional[str] = "redis://localhost:6379/0"
-    
+     
     class Config:
         env_file = ".env"
         case_sensitive = True
