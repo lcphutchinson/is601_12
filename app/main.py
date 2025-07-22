@@ -2,7 +2,7 @@ from contextlib import asynccontextmanager
 from datetime import datetime, timezone, timedelta
 from uuid import UUID
 from typing import List
-from fastapi import Body, FastAPI, Depends, HTTPException, status
+from fastapi import Body, FastAPI, Depends, HTTPException, Request, status
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 
@@ -27,7 +27,8 @@ app = FastAPI(
     description="API for managing calculations",
     version="1.0.0",
     lifespan=lifespan
-)
+    )
+
 
 # ------------------------------------------------------------------------------
 # Health Endpoint
